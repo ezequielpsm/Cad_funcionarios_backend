@@ -12,8 +12,8 @@ async function bootstrap() {
 
 function configureSwagger(app: INestApplication) {
   const config = new DocumentBuilder()
-    .setTitle('Funcionários API')
-    .setDescription('API para gerenciamento de funcionários')
+    .setTitle('PhillCode Firebase Auth')
+    .setDescription('Aprenda a usar a autenticação com Firebase no NestJS')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

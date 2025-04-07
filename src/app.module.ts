@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { FirebaseModule } from './firebase/firebase.module';
 import { UsersModule } from './users/users.module';
-//import { RolesModule } from './roles/roles.module';
+import { RolesModule } from './roles/roles.module';
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { UsersModule } from './users/users.module';
     FirebaseModule.forRoot(),
     AuthModule,
     UsersModule,
-    //RolesModule,
+    RolesModule,
   ],
   providers: [AppService],
 })
