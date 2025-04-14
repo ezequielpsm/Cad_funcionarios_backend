@@ -1,4 +1,11 @@
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsEmail,
+  IsDateString,
+
+} from 'class-validator';
 
 export class CreateEmployee {
   @IsNotEmpty()
@@ -6,8 +13,38 @@ export class CreateEmployee {
   name: string;
 
   @IsNotEmpty()
+  @IsEmail()
+  email: string;
+
+  @IsNotEmpty()
+  @IsDateString()
+  data: string;
+
+  @IsNotEmpty()
   @IsString()
-  author: string;
+  cpf: string;
+
+  @IsNotEmpty()
+  @IsString()
+  rua: string;
+
+  @IsNotEmpty()
+  @IsString()
+  cep: string;
+
+  @IsOptional()
+  @IsString()
+  bairro: string;
+
+  @IsOptional()
+  @IsString()
+  cidade: string;
+
+  @IsOptional()
+  @IsString()
+  estado: string;
+
+  
 }
 
 export class UpdateEmployee {
@@ -16,8 +53,37 @@ export class UpdateEmployee {
   name?: string;
 
   @IsOptional()
+  @IsEmail()
+  email?: string;
+
+  @IsOptional()
+  @IsDateString()
+  data?: string;
+
+  @IsOptional()
   @IsString()
-  author?: string;
+  cpf?: string;
+
+  @IsOptional()
+  @IsString()
+  rua: string;
+
+  @IsOptional()
+  @IsString()
+  cep : string;
+
+  @IsOptional()
+  @IsString()
+  bairro : string;
+
+  @IsOptional()
+  @IsString()
+  cidade : string;
+
+  @IsNotEmpty()
+  @IsString()
+  estado : string;
+
 }
 
 export class UpdateEmployeeParams {
@@ -30,5 +96,4 @@ export class DeleteEmployeeParams {
 
 export class GetEmployeeParams {
   name: string;
-  author: string;
 }

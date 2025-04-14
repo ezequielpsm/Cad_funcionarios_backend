@@ -11,20 +11,20 @@ import {
 import { EmployeeService } from './employee.service';
 import { Employee } from '@prisma/client';
 import {
-  CreateEmployee,
   DeleteEmployeeParams,
   GetEmployeeParams,
   UpdateEmployee,
   UpdateEmployeeParams,
 } from './employee.dto';
+import { CreateEmployee } from 'src/app.service';
 
-@Controller('api/music')
+@Controller('/api/employee')
 export class EmployeeController {
   constructor(private readonly employeeService: EmployeeService) {}
 
   @Post()
-  create(@Body() createMusic: CreateEmployee): Promise<Employee> {
-    return this.employeeService.create(createMusic);
+  create(@Body() createEmployee: CreateEmployee): Promise<Employee> {
+    return this.employeeService.create(createEmployee);
   }
 
   @Put(':id')
@@ -36,7 +36,9 @@ export class EmployeeController {
   }
 
   @Delete(':id')
-  delete(@Param() deleteEmployeeParams: DeleteEmployeeParams): Promise<Employee> {
+  delete(
+    @Param() deleteEmployeeParams: DeleteEmployeeParams,
+  ): Promise<Employee> {
     return this.employeeService.delete(deleteEmployeeParams);
   }
 

@@ -5,8 +5,8 @@ import { AuthModule } from './auth/auth.module';
 import { FirebaseModule } from './firebase/firebase.module';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
-import { MusicController } from './employee/employee.controller';
-import { MusicService } from './employee/employee.service';
+import { EmployeeController } from './employee/employee.controller';
+import { EmployeeService } from './employee/employee.service';
 import { PrismaService } from './prisma/prisma.service';
 
 @Module({
@@ -17,8 +17,8 @@ import { PrismaService } from './prisma/prisma.service';
     UsersModule,
     RolesModule,
   ],
-  controllers: [MusicController],
+  controllers: [EmployeeController],
 
-  providers: [AppService, MusicService, PrismaService],
+  providers: [AppService, EmployeeService, PrismaService],
 })
 export class AppModule {}

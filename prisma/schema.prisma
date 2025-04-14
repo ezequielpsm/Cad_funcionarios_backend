@@ -9,7 +9,15 @@ datasource db {
 
 model Employee {
   id     String @id @default(uuid())
-  author String
   name   String
+  email String
+  data     DateTime
+  cpf      String
+  rua String
+  cep String
+  bairro String
+  cidade String
+  estado String
+ 
 }
 
